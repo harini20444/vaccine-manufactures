@@ -1,3 +1,4 @@
+var fetch=require("node-fetch")
 const homelist =async (req, res) => {
 
   let data= await fetch("http://localhost:3000/api/locations").then(res=>{
@@ -151,6 +152,7 @@ const homelist =async (req, res) => {
 
 const getLocation=async function(req,res){
 const _id=req.params._id
+
 let data= await fetch("http://localhost:3000/api/locations/"+_id).then(res=>{
   let result=res.json()
    return result
