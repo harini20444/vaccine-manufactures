@@ -1,0 +1,48 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+  
+  .row
+    .col-12.col-lg-9
+      .row
+        .col-12.col-md-6
+          p.rating
+            +outputRating(location.rating)
+          p= location.address
+      
+      .card.card-primary
+        .card-block
+          h2.card-title Opening hours
+          each time in location.openingTimes
+            p.card-text
+              | #{time.days} :
+              if time.closed
+                | closed
+              else
+                | #{time.opening} - #{time.closing}
+
+      .card.card-primary
+        .card-block
+          h2.card-title Facilities
+          each facility in location.facilities
+            span.badge.badge-warning
+              i.fa.fa-check
+              | &nbsp;#{facility}
+              | &nbsp;
+      
+    .col-12.col-lg-9.location-map
+      .card.card-primary
+        .card-block
+          .card-title
+            h2
+              a(href=`https://www.google.com/maps/place/${location.coords.lat}${","}${location.coords.lng}`,target="_blank")  Location map
+
+
+
+    //- .col-12.col-lg-3
+    //-   p.lead #{location.name} #{sidebar.context}
+    //-   p= sidebar.callToAction
