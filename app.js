@@ -6,7 +6,7 @@ var logger = require('morgan');
 require('./app_api/models/db');
 
 var indexRouter = require('./app_server/routes/index');
-var usersRouter = require('./app_server/routes/users');
+// var usersRouter = require('./app_server/routes/users');
 const apiRouter = require('./app_api/routes/index');
 
 var app = express();
@@ -43,8 +43,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(1000, () => {
-  console.log(`app listening on port ${1000}`)
-})
+// app.listen(1000, () => {
+//   console.log(`app listening on port ${1000}`)
+// })
 
 module.exports = app;
