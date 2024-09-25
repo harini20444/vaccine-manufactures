@@ -163,7 +163,8 @@ let data= await fetch("http://localhost:1000/api/locations/"+_id).then(res=>{
   sidebar: {
     callToAction: "World's first Intranasal Vaccine Receives Approval for Emergency use in",
   },
-  location:data
+  location:data,
+  currentUrl: req.originalUrl
 },)
  
 }

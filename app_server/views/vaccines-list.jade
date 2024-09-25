@@ -1,0 +1,18 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+      //- .card-title 
+      //- -   h2=company.name
+    
+  
+  .row
+    .col-12.col-md-8
+      each vaccine in list
+        .card
+          .card-block
+            h4.whiteText
+              a(href=vaccine.detailUrl,target="_blank")= vaccine.name
