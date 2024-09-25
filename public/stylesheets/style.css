@@ -87,3 +87,6 @@ h4 small {
   background-image: url("https://www.gov.sg/images/default-source/media/gov/factually/factually.jpg");
   background-size: cover;
   }
+  h3 a{
+    color: #ffffff;
+  }
