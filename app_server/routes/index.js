@@ -4,6 +4,7 @@ const ctrlLocations =
 require('../controllers/locations');
 const ctrlOthers = require('../controllers/others');
 const ctrlVaccines = require('../controllers/vaccines');
+const ctrllist = require('../controllers/list');
 
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);
@@ -16,5 +17,6 @@ router.get("/location/:_id",ctrlLocations.getLocation)
 // router.get('/location/IndianImmunologicals',ctrlLocations.locationInfoIndianImmunologicals);
 /* Other pages */
 router.get('/about', ctrlOthers.about);
+router.get('/list', ctrllist.list);
 // router.get("/location/:_id/vaccines",ctrlVaccines.getVaccines)
 module.exports = router;

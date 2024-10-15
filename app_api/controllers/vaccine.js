@@ -5,8 +5,13 @@ const getVaccineList=async(req,res)=>{
     // let location = await Location.findOne({slug: req.params._id})
     return res.status(200).send(list)
     }
+const getAll=async(req,res)=>{
+    let list =await Vaccine.find({})
+    return res.status(200).send(list)
+    }
     
     
     module.exports={
-        getVaccineList
+        getVaccineList,
+        getAll
     }

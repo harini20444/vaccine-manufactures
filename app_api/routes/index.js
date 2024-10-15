@@ -7,7 +7,7 @@ require('../controllers/vaccine');
 /* Locations pages */
 router.get('/locations', ctrlLocations.list);
 router.get('/locations/:_id/vaccines', ctrlVaccines.getVaccineList);
-
+router.get('/vaccines', ctrlVaccines.getAll);
 router.get("/locations/:_id",ctrlLocations.getLocation)
 
 
